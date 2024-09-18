@@ -3,10 +3,10 @@ display the length of the string. Replace the word “Morning” by “Evening�
 display the new string (use StringBuffer class). */
 public class U3P7 {
     public static void main(String args[]) {
-        StringBuffer STR = new StringBuffer("Hello,Good Morning");
+        String STR = "Hello, Good Morning";
         printMessage("Original string: " + STR);
         printMessage("Length of string: " + STR.length());
-        printMessage("New string: " + STR.replace(11, 18, "Evening"));
+        printMessage("New string: " + STR.replace("Morning", "Evening"));
     }
 
     public static void printMessage(String message) {
