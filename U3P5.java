@@ -4,39 +4,54 @@ operations:
 2. Count total number of characters and display each character's position too.
 3. Identify that whether the string is palindrome or not.
 Count total number of uppercase and lowercase characters in it. */
-class U3P5 {
+import java.util.Scanner;
 
-    public static void main(String args[]) {
-        String string = new String(args[0]);
-        printMessage(string);
-        int length = string.length();
-        printMessage("Length of string: " + length);
-        char c[] = string.toCharArray();
-        int uppercase = 0, lowercase = 0;
-        for (int i = 0; i < length; i++) {
-            printMessage("Character at position " + i + ": " + c[i]);
-            if (Character.isUpperCase(c[i])) {
-                uppercase++;
-            } else {
-                lowercase++;
-            }
+public class U3P5 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        printMessage("Enter a string: ");
+        String inputString = scanner.nextLine();
+
+        for (int i = inputString.length() - 1; i >= 0; i--) {
+            System.out.println(inputString.charAt(i));
         }
-        printMessage("Total uppercase is: " + uppercase);
-        printMessage("Total lowercase is: " + lowercase);
-        printMessage("Total character is: " + length);
-        printMessage("Reverse order: ");
-        for (int i = length - 1; i >= 0; i--) {
-            System.out.println(c[i]);
+
+        printMessage("Total number of characters: " + inputString.length());
+
+        boolean isPalindrome = checkPalindrome(inputString);
+        if (isPalindrome) {
+            printMessage("The given string is a palindrome.");
+        } else {
+            printMessage("The given string is not a palindrome.");
         }
-        StringBuffer stringOne = new StringBuffer(string);
+
+        countUppercaseAndLowercase(inputString);
+
+        scanner.close();
+    }
+
+    public static boolean checkPalindrome(String str) {
+        StringBuffer stringOne = new StringBuffer(str);
         StringBuffer stringTwo = new StringBuffer(stringOne.reverse());
         String stringThree = new String(stringTwo);
-        boolean f = string.equals(stringThree);
-        if (f == true) {
-            printMessage("Given string is palindrome.");
-        } else {
-            printMessage("Given string isn't palindrome.");
+        boolean f = str.equals(stringThree);
+        return f;
+    }
+
+    public static void countUppercaseAndLowercase(String str) {
+        int uppercaseCount = 0, lowercaseCount = 0;
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            if (Character.isUpperCase(ch)) {
+                uppercaseCount++;
+            } else if (Character.isLowerCase(ch)) {
+                lowercaseCount++;
+            }
         }
+        printMessage("Total number of uppercase characters: " + uppercaseCount);
+        printMessage("Total number of lowercase characters: " + lowercaseCount);
     }
 
     public static void printMessage(String message) {
