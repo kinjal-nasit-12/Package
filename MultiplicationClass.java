@@ -2,20 +2,15 @@
 package MulPackage;
 
 public class MultiplicationClass {
+
     int a, b;
 
-    public void setData(int x, int y) {
+    public MultiplicationClass(int x, int y) {
         a = x;
         b = y;
     }
 
-    public void calcData() {
-        int mul = a * b;
-        printMessage("Multiplication of two number is: " + mul);
-    }
-
-    public static void printMessage(String message) {
-        System.out.println(message);
+    public int calcData() {
+        return a * b;
     }
 }
-
