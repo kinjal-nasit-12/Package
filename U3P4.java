@@ -18,13 +18,16 @@ public class U3P4 {
         printMessage("Enter number 2: ");
         int y = getIntegerValue(scanner);
 
-        SumClass sumObject = new SumClass();
-        sumObject.setData(x, y);
-        MultiplicationClass MultiplicationObject = new MultiplicationClass();
-        MultiplicationObject.setData(x, y);
+        SumClass sumObject = new SumClass(x, y);
 
-        sumObject.calcData();
-        MultiplicationObject.calcData();
+        MultiplicationClass MultiplicationObject = new MultiplicationClass(x, y);
+
+        int sum = sumObject.calcData();
+        printMessage("Sum of " + x + " and " + y + " is : " + sum);
+
+        int multiplication = MultiplicationObject.calcData();
+        printMessage("Multiplication of " + x + " and " + y + " is : " + multiplication);
+
         scanner.close();
     }
 
@@ -36,4 +39,3 @@ public class U3P4 {
         return scanner.hasNextInt() ? scanner.nextInt() : 0;
     }
 }
-
