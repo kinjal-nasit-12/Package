@@ -3,11 +3,8 @@ package SumPackage;
 
 public class SumClass {
 
-    int a, b;
-
-    public SumClass(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
+    int a;
+    int b;
 
     public void setData(int x, int y) {
         a = x;
@@ -23,4 +20,5 @@ public class SumClass {
         System.out.println(message);
     }
 }
+
 
