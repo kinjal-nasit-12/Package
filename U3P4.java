@@ -19,11 +19,12 @@ public class U3P4 {
         int y = getIntegerValue(scanner);
 
         SumClass sumObject = new SumClass();
+        sumObject.setData(x, y);
         MultiplicationClass MultiplicationObject = new MultiplicationClass();
         MultiplicationObject.setData(x, y);
-        sumObject.setData(x, y);
-        sumObject.CalcData();
-        MultiplicationObject.CalcData();
+
+        sumObject.calcData();
+        MultiplicationObject.calcData();
         scanner.close();
     }
 
@@ -35,3 +36,4 @@ public class U3P4 {
         return scanner.hasNextInt() ? scanner.nextInt() : 0;
     }
 }
+
