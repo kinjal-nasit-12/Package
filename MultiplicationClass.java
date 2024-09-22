@@ -2,12 +2,7 @@
 package MulPackage;
 
 public class MultiplicationClass {
-
     int a, b;
-
-    public MultiplicationClass(int x, int y) {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     public void setData(int x, int y) {
         a = x;
@@ -23,3 +18,4 @@ public class MultiplicationClass {
         System.out.println(message);
     }
 }
+
